@@ -17,7 +17,9 @@
 # Date: 07/28/2013
 
 
-FROM ubuntu:14.04
+# FROM ubuntu:14.04
+# lighter image
+FROM node:9-alpine
 MAINTAINER Roberto G. Hashioka "roberto_hashioka@hotmail.com"
 
 RUN apt-get update -y
@@ -52,7 +54,8 @@ RUN apt-get -y install fuse
 
 # Installing the apps: Firefox, flash player plugin, LibreOffice and xterm
 # libreoffice-base installs libreoffice-java mentioned before
-RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm
+# RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm
+RUN apt-get install -y xterm git default-jre eclipse
 
 # Set locale (fix the locale warnings)
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
