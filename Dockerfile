@@ -54,7 +54,7 @@ RUN sed -i 's/session    required     pam_loginuid.so/#session    required     p
 # Installing the apps: Firefox, flash player plugin, LibreOffice and xterm
 # libreoffice-base installs libreoffice-java mentioned before
 # RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm
-RUN apt-get install -y xterm git default-jre eclipse
+RUN apt-get install -y xterm git vim default-jre eclipse
 
 # Set locale (fix the locale warnings)
 # RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
