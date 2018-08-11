@@ -58,6 +58,9 @@ RUN apt-get install -y xterm git default-jre eclipse
 
 # Set locale (fix the locale warnings)
 # RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
+apt-get install -y tzdata && \
+  ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && \
+  dpkg-reconfigure --frontend noninteractive tzdata
 
 # Copy the files into the container
 ADD . /src
